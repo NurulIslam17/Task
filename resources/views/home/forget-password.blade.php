@@ -9,7 +9,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="content" />
 
-    <title>Log In | SEO Content</title>
+    <title>Forgot Password | SEO Content</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -34,26 +34,26 @@
     />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{asset('/')}}font/assets/css/style.css" />
+    <link rel="stylesheet" href="{{ asset('/') }}font/assets/css/style.css" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('/')}}font/assets/images/icons/favicon.ico" />
+    <link rel="shortcut icon" href="{{ asset('/') }}font/assets/images/icons/favicon.ico" />
 </head>
 
 <body>
-<main class="section-login">
-    <section class="section-login--logo">
-        <a href="index.html">
-            <img src="{{asset('/')}}font/assets/images/logo.png" alt="logo" class="img-fluid" />
+<main class="section-forgot-password">
+    <section class="section-forgot-password--logo">
+        <a href="{{ route('/') }}">
+            <img src="{{ asset('/') }}font/assets/images/logo.png" alt="logo" class="img-fluid" />
         </a>
     </section>
 
-    <section class="section-login--form">
+    <section class="section-forgot-password--form">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-5">
                     <div class="card">
-                        <div class="card-title">Sign In</div>
+                        <div class="card-title">Forgot Password</div>
                         <div class="card-body">
                             <form action="">
                                 <div class="mt-3">
@@ -64,29 +64,10 @@
                                         name=""
                                     />
                                 </div>
-                                <div class="mt-3">
-                                    <label for="" class="form-label">Password</label>
-                                    <input
-                                        type="password"
-                                        class="form-control u-box-shadow-1"
-                                        name=""
-                                    />
-                                </div>
-                                <div class="mt-5">
-                                    <div class="btn btn-green">Sign In</div>
+                                <div class="my-5">
+                                    <div class="btn btn-green">Request Password</div>
                                 </div>
                             </form>
-                            <div class="links">
-                                <p>
-                                    <a href="{{ route('signup') }}">Need an account?</a>
-                                    <a href="{{ route('forget.password') }}">Forgot Password?</a>
-                                </p>
-                            </div>
-                            <div class="back-button">
-                                <a href="{{ route('/') }}">
-                                    <i class="bi bi-arrow-left-circle"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>

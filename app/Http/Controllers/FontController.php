@@ -20,4 +20,9 @@ class FontController extends Controller
     {
         return view('home.signup');
     }
+
+    public function forgetPassword()
+    {
+        return view('home.forget-password');
+    }
 }

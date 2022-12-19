@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FontController;
+use App\Http\Controllers\AuthenticationController;
 
 
 Route::get('/', function () {
@@ -11,3 +12,7 @@ Route::get('/', function () {
 Route::get('/',[FontController::class,'home'])->name('/');
 Route::get('login',[FontController::class,'login'])->name('login');
 Route::get('signup',[FontController::class,'signUp'])->name('signup');
+Route::get('forget/password',[FontController::class,'forgetPassword'])->name('forget.password');
+
+//Auth
+Route::post('register',[AuthenticationController::class,'register'])->name('register');
