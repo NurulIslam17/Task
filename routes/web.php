@@ -16,3 +16,5 @@ Route::get('forget/password',[FontController::class,'forgetPassword'])->name('fo
 
 //Auth
 Route::post('register',[AuthenticationController::class,'register'])->name('register');
+Route::post('signup',[AuthenticationController::class,'signUp'])->name('sign.up');
+Route::get('logout',[AuthenticationController::class,'logout'])->name('logout');

@@ -89,7 +89,7 @@
             </div>
 
             <p class="text-success"> {{ Session::get('msg') }} </p>
-            
+
             <div class="mt-5">
                 <input type="submit"  class="btn btn-blue" value="Sign Up" >
             </div>

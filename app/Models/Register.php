@@ -16,7 +16,7 @@ class Register extends Model
 
         self::$register->name       = $request->name;
         self::$register->email      = $request->email;
-        self::$register->password   = $request->password;
+        self::$register->password   = bcrypt($request->password);
 
         self::$register->save();
 

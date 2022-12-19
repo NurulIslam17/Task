@@ -37,7 +37,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-blue">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('/') }}">
                 <img src="{{asset('')}}font/assets/images/logo.png" alt="logo" class="logo" />
             </a>
             <button
@@ -126,12 +126,26 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-white" href="{{ route('signup') }}">Sign Up</a>
-                    </li>
+
+                    @if(Session::get('user_id'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">{{Session::get('user_name')}}</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                        </li>
+
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-white" href="{{ route('signup') }}">Sign Up</a>
+                        </li>
+                    @endif
+
+
                 </ul>
             </div>
         </div>

@@ -54,14 +54,16 @@
                 <div class="col-md-5">
                     <div class="card">
                         <div class="card-title">Sign In</div>
+                        <p style="color: orangered; text-align: center; margin-left: 10px;">{{ Session::get('message') }}</p>
                         <div class="card-body">
-                            <form action="">
+                            <form action="{{ route('sign.up') }}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="mt-3">
                                     <label for="" class="form-label">Email</label>
                                     <input
                                         type="email"
                                         class="form-control u-box-shadow-1"
-                                        name=""
+                                        name="email"
                                     />
                                 </div>
                                 <div class="mt-3">
@@ -69,11 +71,11 @@
                                     <input
                                         type="password"
                                         class="form-control u-box-shadow-1"
-                                        name=""
+                                        name="password"
                                     />
                                 </div>
                                 <div class="mt-5">
-                                    <div class="btn btn-green">Sign In</div>
+                                    <input type="submit" class="btn btn-green" value="Sign In">
                                 </div>
                             </form>
                             <div class="links">
