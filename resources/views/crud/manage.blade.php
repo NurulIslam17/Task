@@ -5,6 +5,7 @@
 
             <div class="col-md-12 my-3">
                 <h1 class="text-center">All Product Information</h1>
+                <p class="text-danger">{{ Session::get('msg') }}</p>
             </div>
 
             <table class="table table-bordered table-striped">
@@ -31,7 +32,11 @@
                         </td>
                         <td>
                             <a href="" class="btn btn-success">EDIT</a>
-                            <a href="" class="btn btn-danger">DELETE</a>
+                            <form action="{{ route('delete.product') }}" method="post" class="d-inline-flex">
+                                @csrf
+                                <input type="hidden" name="deleteProduct" value="{{$product->id}}">
+                                <input type="submit" class="btn btn-danger" onclick="return confirm('Are you sure ?')" value="Delete">
+                            </form>
                         </td>
                     </tr>
                 @endforeach

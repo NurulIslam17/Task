@@ -23,4 +23,16 @@ class ProductController extends Controller
         ]);
     }
 
+    public function deleteProduct(Request $request)
+    {
+        $product = Product::find($request->deleteProduct);
+
+        if ($product->image)
+        {
+            unlink($product->image);
+        }
+        $product->delete();
+        return back()->with('msg','Product Deleted');
+    }
+
 }

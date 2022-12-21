@@ -25,4 +25,5 @@ Route::get('logout',[AuthenticationController::class,'logout'])->name('logout');
 
 Route::get('crud',[AdminController::class,'crud'])->name('crud');
 Route::post('store/product',[ProductController::class,'storeProduct'])->name('store.product');
+Route::post('delete/product/',[ProductController::class,'deleteProduct'])->name('delete.product');
 Route::get('manage',[ProductController::class,'manage'])->name('manage');
