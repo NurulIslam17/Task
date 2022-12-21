@@ -75,10 +75,14 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('crud') }}">CRUD</a>
-                    </li>
+
                     @if(Session::get('user_id'))
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('crud') }}">CRUD</a>
+                        </li>
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">{{Session::get('user_name')}}</a>
                         </li>

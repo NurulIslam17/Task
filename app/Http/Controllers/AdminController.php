@@ -8,6 +8,6 @@ class AdminController extends Controller
 {
     public function crud()
     {
-        return "djfvdkhv";
+        return view('crud.add');
     }
 }
