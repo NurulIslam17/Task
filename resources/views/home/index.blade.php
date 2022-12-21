@@ -9,7 +9,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="content" />
 
-    <title>SEO Content</title>
+    <title>AquaLink</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -38,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-blue">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('/') }}">
-                <img src="{{asset('')}}font/assets/images/logo.png" alt="logo" class="logo" />
+                <h1 class="text-warning" style="font-weight: bold">Aqua<span class="text-light">Link</span> </h1>
             </a>
             <button
                 class="navbar-toggler"
@@ -53,59 +53,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbarDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            Services
-                        </a>
 
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Article Writing</a></li>
-                            <li><a class="dropdown-item" href="#">Blog Posts</a></li>
-                            <li>
-                                <a class="dropdown-item" href="#">Copywriting</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Ghostwriting</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Local SEO City Pages</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Press Releases</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Product Descriptions</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">SEO Content</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Subject Matter Experts</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Website Content</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">White Papers</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Managed Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Marketplace</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a
                             class="nav-link dropdown-toggle"
@@ -127,6 +75,9 @@
                         </ul>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('crud') }}">CRUD</a>
+                    </li>
                     @if(Session::get('user_id'))
                         <li class="nav-item">
                             <a class="nav-link" href="#">{{Session::get('user_name')}}</a>
@@ -152,6 +103,8 @@
     </nav>
 </header>
 <main></main>
+
+@yield('body')
 
 <footer></footer>
 

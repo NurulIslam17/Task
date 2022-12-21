@@ -73,11 +73,19 @@
             @csrf
             <div class="mt-3">
                 <label for="" class="form-label">First Name</label>
-                <input type="text" class="form-control u-box-shadow-1" name="name" />
+                <input type="text" class="form-control u-box-shadow-1" name="name" value="{{ old('name') }}" />
+
+                @error('name')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
             <div class="mt-3">
                 <label for="" class="form-label">Email</label>
-                <input type="email" class="form-control u-box-shadow-1" name="email" />
+                <input type="email" class="form-control u-box-shadow-1" name="email" value="{{ old('email') }}" />
+
+                @error('email')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
             <div class="mt-3">
                 <label for="" class="form-label">Password</label>
@@ -85,7 +93,12 @@
                     type="password"
                     class="form-control u-box-shadow-1"
                     name="password"
+                    value="{{ old('password') }}"
                 />
+
+                @error('password')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
 
             <p class="text-success"> {{ Session::get('msg') }} </p>

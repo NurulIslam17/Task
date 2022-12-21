@@ -12,6 +12,15 @@ class AuthenticationController extends Controller
     //    Registration of the users
    public function register(Request $request)
    {
+
+       $validated = $request->validate([
+           'name'=>'required',
+           'email' => 'required|unique:registers|max:255',
+           'password' => 'min:8|',
+       ]);
+
+
+
        Register::signUp($request);
        return back()->with('msg','User Registered Successfully');
    }
