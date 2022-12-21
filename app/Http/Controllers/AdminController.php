@@ -10,4 +10,9 @@ class AdminController extends Controller
     {
         return view('crud.add');
     }
+
+    public function manage()
+    {
+        return view('crud.manage');
+    }
 }

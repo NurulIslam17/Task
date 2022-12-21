@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FontController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 
 
 Route::get('/', function () {
@@ -18,6 +19,10 @@ Route::get('forget/password',[FontController::class,'forgetPassword'])->name('fo
 //Auth
 Route::post('register',[AuthenticationController::class,'register'])->name('register');
 Route::post('signup',[AuthenticationController::class,'signUp'])->name('sign.up');
+
+
 Route::get('logout',[AuthenticationController::class,'logout'])->name('logout');
 
 Route::get('crud',[AdminController::class,'crud'])->name('crud');
+Route::post('store/product',[ProductController::class,'storeProduct'])->name('store.product');
+Route::get('manage',[ProductController::class,'manage'])->name('manage');

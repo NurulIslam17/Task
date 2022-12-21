@@ -10,13 +10,14 @@
                 <div class="col-md-4 mx-auto">
                     <div class="card card-body">
                         <h2 class="text-center">Add Product</h2>
+                        <p class="text-success text-center">{{ Session::get('success') }}</p>
                         <a href=" {{ route('manage')  }}" class=" btn btn-success my-4">View Product</a>
 
-                        <form method="post" action="" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row mb-3">
-                                <label class="col-md-5" for="">Name</label>
+                                <label class="col-md-5" for="">Product Name</label>
                                 <div class="col-md-7">
                                     <input type="text" class="form-control" name="title">
                                 </div>
@@ -39,7 +40,7 @@
                             <div class="row mb-3">
                                 <label class="col-md-5" for="">Image</label>
                                 <div class="col-md-7">
-                                    <input type="file" class="form-control" name="price">
+                                    <input type="file" class="form-control" name="image">
                                 </div>
                             </div>
 
