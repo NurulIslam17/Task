@@ -5,6 +5,7 @@ use App\Http\Controllers\FontController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ApiControlller;
 
 
 Route::get('/', function () {
@@ -31,3 +32,8 @@ Route::post('edit/product/',[ProductController::class,'editProduct'])->name('edi
 Route::post('update/product/',[ProductController::class,'updateProduct'])->name('update.product');
 
 Route::get('manage',[ProductController::class,'manage'])->name('manage');
+
+
+// API
+
+Route::get('store-api-data',[ApiControlller::class,'store'])->name('todo.api');

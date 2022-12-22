@@ -18,6 +18,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
         crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,6 +81,10 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('crud') }}">CRUD</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('todo.api') }}">Todo API</a>
                         </li>
 
 
