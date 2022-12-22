@@ -37,3 +37,4 @@ Route::get('manage',[ProductController::class,'manage'])->name('manage');
 // API
 
 Route::get('store-api-data',[ApiControlller::class,'store'])->name('todo.api');
+Route::get('view.todo.api',[ApiControlller::class,'viewTodoApi'])->name('view.todo.api');

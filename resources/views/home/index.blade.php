@@ -18,7 +18,9 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
         crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="">
+
+    {{--    Data Table--}}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,27 +57,6 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbarDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            Resources
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </li>
-
 
                     @if(Session::get('user_id'))
 
@@ -83,9 +64,22 @@
                             <a class="nav-link" href="{{ route('crud') }}">CRUD</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('todo.api') }}">Todo API</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Todo Api
+                            </a>
+                            <ul class="dropdown-menu bg-info" aria-labelledby="navbarDropdown">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('todo.api') }}">Update Todo Api</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('view.todo.api') }}">View Data</a>
+                                </li>
+
+                            </ul>
                         </li>
+
 
 
                         <li class="nav-item">
@@ -113,6 +107,17 @@
 </header>
 <main></main>
 
+@if(Session::get('apiMsg'))
+    <div class="container">
+        <section class="py-5">
+            <p class="text-success">{{ Session::get('apiMsg') }}</p>
+        </section>
+    </div>
+
+@endif
+
+
+
 @yield('body')
 
 <footer></footer>
@@ -123,5 +128,18 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"
 ></script>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+
+    {{--data Table--}}
+    <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
+
 </body>
 </html>

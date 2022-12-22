@@ -28,10 +28,19 @@ class ApiControlller extends Controller
                     'completed'=>$post['completed'],
                 ]
             );
-
-//            print_r($post['completed']);
         }
-//       dd('Data Stored');
-
+        return back()->with('apiMsg','Todo API Data Added to Data Table');
     }
-}
+
+    public function viewTodoApi()
+    {
+        $allData = Api::get();
+        return view('todo.data',[
+            'data' => $allData,
+        ]);
+    }
+
+
+
+  }
+
