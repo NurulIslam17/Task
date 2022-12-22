@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ApiControlller;
+use App\Http\Controllers\Assessment2;
 
 
 Route::get('/', function () {
@@ -38,3 +39,6 @@ Route::get('manage',[ProductController::class,'manage'])->name('manage');
 
 Route::get('store-api-data',[ApiControlller::class,'store'])->name('todo.api');
 Route::get('view.todo.api',[ApiControlller::class,'viewTodoApi'])->name('view.todo.api');
+
+//Assesment 2
+Route::get('assessment2',[Assessment2::class,'home'])->name('assessment2');

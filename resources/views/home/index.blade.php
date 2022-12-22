@@ -61,6 +61,10 @@
                     @if(Session::get('user_id'))
 
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('assessment2') }}">Assessment2</a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('crud') }}">CRUD</a>
                         </li>
 
@@ -71,7 +75,7 @@
                             </a>
                             <ul class="dropdown-menu bg-info" aria-labelledby="navbarDropdown">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('todo.api') }}">Update Todo Api</a>
+                                    <a class="nav-link" href="{{ route('todo.api') }}">Refreash Api</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('view.todo.api') }}">View Data</a>
