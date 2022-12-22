@@ -31,7 +31,13 @@
                             <img src="{{ asset($product->image) }}" style="height: 80px; width: 80px" alt="Image Not Found">
                         </td>
                         <td>
-                            <a href="" class="btn btn-success">EDIT</a>
+
+                            <form action="{{ route('edit.product') }}" method="post" class="d-inline-flex">
+                                @csrf
+                                <input type="hidden" name="editProduct" value="{{$product->id}}">
+                                <input type="submit" class="btn btn-success"  value="Edit">
+                            </form>
+
                             <form action="{{ route('delete.product') }}" method="post" class="d-inline-flex">
                                 @csrf
                                 <input type="hidden" name="deleteProduct" value="{{$product->id}}">

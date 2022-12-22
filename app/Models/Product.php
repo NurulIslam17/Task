@@ -35,5 +35,29 @@ class Product extends Model
         self::$product->save();
     }
 
+    public static function updateProduct($request)
+    {
+        self::$product = Product::find($request->update_product);
+
+        self::$product->title       = $request->title;
+        self::$product->product     = $request->product;
+        self::$product->price       = $request->price;
+
+        if($request->file('image'))
+        {
+            if (file_exists(self::$product->image ))
+            {
+                unlink(self::$product->image );
+                self::$product->image       = self::saveImage($request);
+            }
+        }
+        else
+        {
+            self::$product->image       = self::saveImage($request);
+        }
+
+        self::$product->save();
+    }
+
 
 }

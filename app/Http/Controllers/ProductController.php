@@ -35,4 +35,18 @@ class ProductController extends Controller
         return back()->with('msg','Product Deleted');
     }
 
+    public function editProduct(Request $request)
+    {
+        $product = Product::find($request->editProduct);
+        return view('crud.edit',[
+            'product' => $product
+        ]);
+    }
+
+    public function updateProduct(Request $request)
+    {
+        Product::updateProduct($request);
+        return redirect()->route('manage')->with('msg','Product Updated Successfully');
+    }
+
 }
