@@ -12,7 +12,6 @@ Route::get('/view-student/{id?}',[Assessment2::class,'viewStudent']);
 Route::post('add-student',[Assessment2::class,'addStudent']);
 // delete Data
 Route::delete('delete-student/{id}',[Assessment2::class,'deleteStudent']);
-
 // update Data
 Route::put('update-student/{id}',[Assessment2::class,'updateStudent']);
 
