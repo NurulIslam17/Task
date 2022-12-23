@@ -49,7 +49,23 @@ class Assessment2 extends Controller
             else{
                 return response()->json(['message' => $fail], 502 );
             }
+    }
 
+    //deleteStudent
 
+    public function deleteStudent($id)
+    {
+        $data = Student::find($id);
+        $result = $data->delete();
+
+        $success = 'Record Deleted successfully';
+        $fail = 'Bad Gateway';
+
+        if($result) {
+            return response()->json(['message' => $success], 200);
+        }
+        else{
+            return response()->json(['message' => $fail], 502 );
+        }
     }
 }
